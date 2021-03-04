@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import RankingScreen from './screens/RankingScreen';
+import CompareScreen from './screens/CompareScreen';
+import ListingScreen from './screens/ListingScreen';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="grid-container">
+        <header>
+          <div className="brand">
+            <Link to="/">EV-List</Link>
+          </div>
+          <div className="header-links">
+            <Link to="/rankings">Rankings</Link>
+            <Link to="/compare">Compare</Link>
+            <Link to="/listing/tesla">Tesla</Link>
+            <Link to="/listing/generalmotors">General Motors</Link>
+            <Link to="/listing/nissan">Nissan</Link>
+            <Link to="/listing/porsche">Porsche</Link>
+            <Link to="/listing/other">Other</Link>
+          </div>
+        </header>
+        <main>
+          <div>
+            <Route path="/" exact component={HomeScreen} />
+            <Route path="/rankings" component={RankingScreen} />
+            <Route path="/compare" component={CompareScreen} />
+            <Route path="/listing/:manufacturer" component={ListingScreen} />
+          </div>
+        </main>
+        <footer>
+          All rights reserved.
+        </footer>
+      </div>
+    </BrowserRouter>
   );
 }
 
