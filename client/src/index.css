@@ -21,6 +21,7 @@ header {
   align-items: center;
   padding: 1rem;
   flex-wrap: wrap;
+  border-bottom: .1rem solid black;
 }
 .header-brand a {
   font-size: 3rem;
@@ -77,13 +78,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3em;
+  padding: 3rem;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 5em;
+  margin-top: 5rem;
 }
 .top-card-collection > div {
-  width: 15em;
+  width: 15rem;
 }
 
 
@@ -104,4 +105,79 @@ footer {
 .top-card-container > div > img{
   max-width: 100%;
   max-height: 100%;
+}
+
+
+/* Ranking screen */
+
+.ranking-container {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ranking-and-sort-container {
+  display: flex;
+}
+.sortBar-wrapper {
+  margin-left: 2.5rem;
+}
+.ranking-container > div {
+  margin: 2.5rem;
+}
+.ranking-heading {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-right: 2.5rem;
+}
+.product-card-collection {
+
+}
+
+
+
+/* SortBar component */
+
+.sortBar-container {
+  padding: .5rem;
+  border-radius: 8px;
+  width: fit-content;
+  border: 1px black solid;
+}
+.sortBar-container > select {
+  margin-left: 1rem;
+}
+
+
+/* ProductCard component */
+
+.product-card-container {
+  display: flex;
+  /* border: 1px solid black; */
+  /* border-radius: .8rem; */
+  margin: 1rem;
+  text-align: left;
+}
+.card-detail > div {
+  font-size: 1.5rem;
+  margin: .8rem;
+  margin-left: 1.5rem;
+
+}
+.card-img-wrapper {
+  width: 30rem;
+  max-height: 18rem;
+  /* border: 1px solid black; */
+}
+.card-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+
+
+/* Common styling */
+
+.inline {
+  display: inline-block;
 }
