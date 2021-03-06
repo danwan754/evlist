@@ -76,7 +76,7 @@ footer {
 
 .top-card-collection {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   padding: 3rem;
   gap: 10px;
@@ -93,6 +93,7 @@ footer {
 .top-card-container {
   width: 100%;
   text-align: center;
+  /* border: 1px solid black; */
 }
 .top-card-heading {
   font-weight: bold;

@@ -6,7 +6,7 @@ function HomeScreen(props) {
         <div>
             <div className="top-card-collection">
                 <div className="best-car">
-                    <TopCard heading="Best Overall" image='/images/tesla-e-3.jpg' description="Overall best range and value."/>
+                    <TopCard heading="Best Overall" image='/images/tesla-e-3.jpg' description="Range and value."/>
                 </div>
                 <div className="range-car">
                     <TopCard heading="Top range" image='/images/tesla-e-3.jpg' description="Go far, far!"/>
