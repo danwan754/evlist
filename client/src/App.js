@@ -3,6 +3,7 @@ import HomeScreen from './screens/HomeScreen';
 import RankingScreen from './screens/RankingScreen';
 import CompareScreen from './screens/CompareScreen';
 import ListingScreen from './screens/ListingScreen';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
   return (
@@ -27,11 +28,12 @@ function App() {
           </div>
         </header>
         <main>
-          <div>
+          <div className="main-container">
             <Route path="/" exact component={HomeScreen} />
             <Route path="/rankings" component={RankingScreen} />
             <Route path="/compare" component={CompareScreen} />
             <Route path="/listing/:manufacturer" component={ListingScreen} />
+            <Route path="/product/:id" component={ProductScreen} />
           </div>
         </main>
         <footer>
