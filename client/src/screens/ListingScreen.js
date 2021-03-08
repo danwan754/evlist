@@ -1,9 +1,26 @@
 import React from 'react';
+import ProductCard from '../components/ProductCard';
+import SortBar from '../components/SortBar';
+
+import data from '../data.js';
 
 function ListingScreen(props) {
+
+    const { vehicles } = data;
+
     return (
-        <div>
-            Listing Screen.
+        <div className="listing-container">
+            <div className="listing-and-sort-container">
+                <div className="listing-heading">
+                    Listings
+                </div>
+                <div className="sortBar-wrapper">
+                    <SortBar />
+                </div>
+            </div>
+            <div className="product-card-collection">
+                {vehicles.map(vehicle => <ProductCard data={vehicle} />)}
+            </div>
         </div>
     )
 }

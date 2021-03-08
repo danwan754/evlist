@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
-import RankingScreen from './screens/RankingScreen';
-import CompareScreen from './screens/CompareScreen';
 import ListingScreen from './screens/ListingScreen';
 import ProductScreen from './screens/ProductScreen';
+import ChargingScreen from './screens/ChargingScreen';
+import InfoScreen from './screens/InfoScreen';
+import RebateScreen from './screens/RebateScreen';
+
 
 function App() {
   return (
@@ -13,25 +15,21 @@ function App() {
           <div className="header-brand">
             <Link to="/">EV-List</Link>
           </div>
-          <div className="header-links-functions">
-              <Link to="/rankings">Rankings</Link>
-              <Link to="/compare">Compare</Link>
-          </div>
-          <div className="header-links-manufacturers">
-              <Link to="/listing/tesla">Tesla</Link>
-              <Link to="/listing/generalmotors">GM</Link>
-              <Link to="/listing/nissan">Nissan</Link>
-              <Link to="/listing/porsche">Porsche</Link>
-              <Link to="/listing/other">Other</Link>
+          <div className="header-links">
+            <Link to="/listing">Vehicles</Link>
+            <Link to="/info">Why EV's?</Link>
+            <Link to="/charging">Charging</Link>
+            <Link to="/rebate">Rebate</Link>
           </div>
         </header>
         <main>
           <div className="main-container">
             <Route path="/" exact component={HomeScreen} />
-            <Route path="/rankings" component={RankingScreen} />
-            <Route path="/compare" component={CompareScreen} />
-            <Route path="/listing/:manufacturer" component={ListingScreen} />
+            <Route path="/listing" component={ListingScreen} />
             <Route path="/product/:id" component={ProductScreen} />
+            <Route path="/charging" component={ChargingScreen} />
+            <Route path="/rebate" component={RebateScreen} />
+            <Route path="/info" component={InfoScreen} />
           </div>
         </main>
         <footer>

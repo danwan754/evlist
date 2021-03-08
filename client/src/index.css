@@ -31,31 +31,19 @@ header a {
   font-weight: bold;
   color: #2d8659;
   padding: 1rem;
+  /* text-shadow: .2rem black; */
 }
-.header-links-functions{
+.header-links{
   font-weight: bold;
 }
-.header-links-functions a{
-  margin: 0 1.5rem 0 1.5rem;
+.header-links a{
+  margin: 0 2rem 0 2rem;
   color: #8c8c8c;
 }
-.header-links-functions a:hover{
+.header-links a:hover{
   color: #339933;
 }
-.header-links-functions a:active{
-  color: #b3e6b3;
-}
-.header-links-manufacturers{
-  font-weight: bold;
-}
-.header-links-manufacturers a{
-  margin: 0 1.5rem 0 1.5rem;
-  color: #8c8c8c;
-}
-.header-links-manufacturers a:hover{
-  color: #339933;
-}
-.header-links-manufacturers a:active{
+.header-links a:active{
   color: #b3e6b3;
 }
 
@@ -159,24 +147,24 @@ footer {
 }
 
 
-/* Ranking screen */
+/* listing screen */
 
-.ranking-container {
+.listing-container {
   /* text-align: center; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.ranking-and-sort-container {
+.listing-and-sort-container {
   display: flex;
 }
 .sortBar-wrapper {
   margin-left: 2.5rem;
 }
-.ranking-container > div {
+.listing-container > div {
   margin: 2.5rem;
 }
-.ranking-heading {
+.listing-heading {
   font-weight: bold;
   font-size: 2.5rem;
   margin-right: 2.5rem;
