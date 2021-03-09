@@ -53,9 +53,9 @@ main {
   grid-area: "main";
 }
 .main-container {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   height: 100%;
 }
 footer {
@@ -81,6 +81,11 @@ footer {
 
 .home-container {
   /* border: solid 1px red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 .top-card-collection {
   display: flex;
