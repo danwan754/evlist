@@ -2,7 +2,7 @@ import React from 'react';
 import ProductCard from '../components/ProductCard';
 import SortBar from '../components/SortBar';
 
-import data from '../data.js';
+import data from '../data/data.js';
 
 function ListingScreen(props) {
 
@@ -19,7 +19,7 @@ function ListingScreen(props) {
                 </div>
             </div>
             <div className="product-card-collection">
-                {vehicles.map(vehicle => <ProductCard data={vehicle} />)}
+                {vehicles.map(vehicle => <ProductCard key={vehicle._id} data={vehicle} />)}
             </div>
         </div>
     )

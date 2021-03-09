@@ -17,8 +17,11 @@ function HomeScreen(props) {
                         <div className="top-card-img-container">
                             <img className="top-card-img" src={car.image} alt="featured car" />
                         </div>
+                        <div className="top-card-name">
+                            {car.name}
+                        </div>
                         <div className="top-card-feature">
-                                {car.feature}
+                            {car.feature}
                         </div>
                         <div className="top-card-description">
                             {car.description}
@@ -30,6 +33,9 @@ function HomeScreen(props) {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className="home-disclaimer">
+                * Price after rebates are applied.
             </div>
         </div>
     );

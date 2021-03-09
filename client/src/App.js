@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ListingScreen from './screens/ListingScreen';
-import ProductScreen from './screens/ProductScreen';
 import ChargingScreen from './screens/ChargingScreen';
 import InfoScreen from './screens/InfoScreen';
 import RebateScreen from './screens/RebateScreen';
@@ -26,7 +25,6 @@ function App() {
           <div className="main-container">
             <Route path="/" exact component={HomeScreen} />
             <Route path="/listing" component={ListingScreen} />
-            <Route path="/product/:id" component={ProductScreen} />
             <Route path="/charging" component={ChargingScreen} />
             <Route path="/rebate" component={RebateScreen} />
             <Route path="/info" component={InfoScreen} />
