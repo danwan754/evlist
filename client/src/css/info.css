@@ -1,0 +1,22 @@
+.info-container {
+    margin: 0 5rem 0 5rem;
+}
+.info-container p{
+    line-height: 24px;
+}
+.info-container h1 {
+    color: #0086b3;
+}
+.info-container h2 {
+    color: #0099cc;
+}
+.info-container section {
+    margin: 4rem 0 4rem 0;
+}
+.info-container footer {
+    font-size: 1.2rem;
+}
+hr {
+    height: .2rem;
+    background-color: #0086b3;
+}
