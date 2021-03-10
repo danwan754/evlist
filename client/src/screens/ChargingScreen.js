@@ -59,6 +59,14 @@ function ChargingScreen(props) {
                     PlugShare is the most comprehensive, up-to-date tool for finding charging stations in North America, Europe, and Asia.
                 </p>
             </section>
+            <footer>
+                <p>All information on this page is obtained from&nbsp;
+                    <a 
+                        href="https://electricvehicles.bchydro.com/charge"
+                        target="_blank"
+                        rel="noreferrer"><b>bchydro.com</b></a>.
+                </p>
+            </footer>
         </div>
     )
 }

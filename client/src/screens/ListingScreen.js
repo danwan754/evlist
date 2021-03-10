@@ -1,6 +1,8 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard';
 import SortBar from '../components/SortBar';
+import Footer from '../components/Footer';
+
 
 import data from '../data/data.js';
 
@@ -21,6 +23,7 @@ function ListingScreen(props) {
             <div className="product-card-collection">
                 {vehicles.map(vehicle => <ProductCard key={vehicle._id} data={vehicle} />)}
             </div>
+            <Footer link="https://electricvehicles.bchydro.com/buying/EV-models-in-BC" />
         </div>
     )
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from '../components/Footer';
+
 
 function InfoScreen(props) {
     return (
@@ -45,16 +47,7 @@ function InfoScreen(props) {
                     Driving an EV is a refreshingly different experience. You'll be amazed how quiet and fast it is, and reassured by all the efficiency information on display.
                 </p>
             </section>
-            <footer>
-                <p>
-                    All information obtained from&nbsp;
-                    <a 
-                        href="https://electricvehicles.bchydro.com/learn/benefits-of-driving-EV" 
-                        target='_blank' 
-                        rel="noreferrer"
-                    >bchydro.com</a>
-                </p>
-            </footer>
+            <Footer link="https://electricvehicles.bchydro.com/learn/benefits-of-driving-EV" />
         </div>
     )
 }
