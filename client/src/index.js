@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { VehiclesContextProvider } from './contexts/VehicleContext';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <VehiclesContextProvider>
     <App />
-  </React.StrictMode>,
+  </VehiclesContextProvider>,
   document.getElementById('root')
 );
 

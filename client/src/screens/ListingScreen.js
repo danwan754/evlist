@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Axios from 'axios';
+
 import ProductCard from '../components/ProductCard';
 import SortBar from '../components/SortBar';
 import Footer from '../components/Footer';
+import { VehicleContext, VehiclesContextProvider } from '../contexts/VehicleContext';
 
-
-import data from '../data/data.js';
 
 function ListingScreen(props) {
 
-    const { vehicles } = data;
+    const {loading, data} = useContext(VehicleContext);
+    const vehicles = data;
+    // console.log(vehicles);
+
+    // const getData = async () => { 
+    //     await Axios.get('/api/list')
+    //     .then(res => res.data)
+    //     .then(data => console.log(data));
+    // };
+    // const data = getData();
+
+    // const getData = async () => { 
+    //     await Axios.get('/api/images/1')
+    //     .then(data => console.log(data));
+    // };
+    // const data = getData();
+    // console.log(data);
 
     return (
         <div className="listing-container">

@@ -1,0 +1,28 @@
+
+NavBar:
+    - tabs: Incentives, WhyEV?, Charging
+Homepage:
+    - show slideshow of top 4 cars: best overall, best range, cheapest, most expensive
+
+TotalRankingsPage:
+    - list all cars by overall rankings
+    - sort bar: overall, performance, range, price
+    - car links to product page
+
+ComparePage:
+    - select two vehicles to compare stats
+    - dropdown and text autocomplete for vehicle selection
+
+ListingPage:
+    - list EV's of manufacturer
+    - reuse sort bar
+    - apply bold to selected data
+
+Incentives page:
+    - discuss EV rebates in Canada and BC/QC
+WhyEV? page:
+    - discuss benefits of EVs, contrast with gas vehicles, pro/cons
+Charging Page:
+    - get user coordinates and find nearest charging stations
+    - discuss about public charging and networks, home charging, lv1,2 charging, link to PlugShare
+    - compare cost of electricity and gas per km
