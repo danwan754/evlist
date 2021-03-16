@@ -27,9 +27,9 @@ function HomeScreen(props) {
                             {car.description}
                         </div>
                         <div className="top-card-product-link">
-                            <Link to={'/product/' + car._id}>
-                                View Details
-                            </Link>
+                            <a href={car.website} target='_blank' rel='noopener'>
+                                Manufacturer's site
+                            </a>
                         </div>
                     </div>
                 ))}
