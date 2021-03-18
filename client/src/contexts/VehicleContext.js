@@ -1,13 +1,18 @@
 import { createContext, useReducer } from 'react';
-import { SORT_HIGH, SORT_LOW, SORT_RANGE, VEHICLES_LOADING_FAIL, VEHICLES_LOADING_REQUEST, VEHICLES_LOADING_SUCCESS } from '../constants';
+import { SORT_HIGH, SORT_LOW, SORT_RANGE, TOP_LOADING_FAIL, TOP_LOADING_REQUEST, TOP_LOADING_SUCCESS, VEHICLES_LOADING_FAIL, VEHICLES_LOADING_REQUEST, VEHICLES_LOADING_SUCCESS } from '../constants/constants';
 
 export const VehicleContext = createContext();
 
-const initialState = {
+const listInitialState = {
     vehicles: [],
     loading: false,
     error: null,
     sort: SORT_LOW
+};
+const topInitialState = {
+  vehicles: [],
+  loading: false,
+  error: null
 };
 
 // fetch/sort vehicle list
@@ -53,11 +58,42 @@ const vehiclesReducer = (state, action) => {
   }
 }
 
+// top card reducer
+const topCardReducer = (state, action) => {
+  switch(action.type) {
+    case TOP_LOADING_REQUEST:
+      return {
+        ...state,
+        loading: true
+      }
+    case TOP_LOADING_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        vehicles: action.payload
+      }
+    case TOP_LOADING_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      }
+  }
+}
+
 export const VehiclesContextProvider = props => {
-  const [state, dispatch] = useReducer(vehiclesReducer, initialState);
+  const [listState, listDispatch] = useReducer(vehiclesReducer, listInitialState);
+  const [topState, topDispatch] = useReducer(topCardReducer, topInitialState);
 
   return (
-    <VehicleContext.Provider value={ [state, dispatch] }>
+    <VehicleContext.Provider value={ 
+        {
+          listState,
+          topState,
+          listDispatch,
+          topDispatch
+        }
+    }>
       {props.children}
     </VehicleContext.Provider>
   )

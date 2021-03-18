@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { SORT_HIGH, SORT_LOW, SORT_RANGE } from '../constants';
+import { SORT_HIGH, SORT_LOW, SORT_RANGE } from '../constants/constants';
 import { VehicleContext } from '../contexts/VehicleContext';
 
 
 function SortBar(props) {
 
-    const [state, dispatch] = useContext(VehicleContext);
+    const { listState, listDispatch } = useContext(VehicleContext);
 
     const updateSort = () => {
-        dispatch({
+        listDispatch({
             type: document.getElementById('sortSelect').value
         });
     }
@@ -21,7 +21,7 @@ function SortBar(props) {
                     name="sortBar"
                     className="sortBar-select" 
                     id="sortSelect" 
-                    value={state.sort} 
+                    value={listState.sort} 
                     onChange={updateSort}
                 >
                     <option value={SORT_LOW}>low price</option>

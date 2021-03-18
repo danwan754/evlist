@@ -1,15 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-import data from '../front-data';
-
-const { topCardData } = data;
+import React, { useContext, useEffect } from 'react';
+import getTopVehicles from '../actions/getTopVehicles';
+import { VehicleContext } from '../contexts/VehicleContext';
 
 function HomeScreen(props) {
+
+    const { topState, topDispatch } = useContext(VehicleContext);
+    const { vehicles } = topState;
+
+    useEffect(() => {
+        getTopVehicles()(topDispatch);
+    }, []);
+
     return (
         <div className="home-container">
             <div className="top-card-collection">
-                {topCardData.map(car => (
+                {vehicles.map(car => (
                     <div key={car.heading} className="top-card-container">
                         <div className="top-card-heading">
                             {car.heading}

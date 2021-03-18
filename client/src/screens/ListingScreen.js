@@ -9,11 +9,14 @@ import getVehicles from '../actions/getVehicles';
 
 function ListingScreen(props) {
 
-    const [state, dispatch] = useContext(VehicleContext);
-    const vehicles = state.vehicles;
+    const { listState, listDispatch } = useContext(VehicleContext);
+    const { vehicles } = listState;
 
     useEffect(() => {
-        getVehicles()(dispatch);
+        if (!vehicles.length) { 
+            console.log('request');
+            getVehicles()(listDispatch);
+        }
     }, []);
 
     return (
@@ -26,7 +29,7 @@ function ListingScreen(props) {
                     <SortBar />
                 </div>
             </div>
-            {state.loading ? 
+            {listState.loading ? 
                 'LOADING...'
                 :
                 <div className="product-card-collection">

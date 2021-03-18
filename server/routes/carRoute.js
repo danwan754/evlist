@@ -1,7 +1,9 @@
 import express from 'express';
-import data from '../data/data.js';
+import list from '../data/list.js';
+import topList from '../data/topList.js';
 
-const { vehicles } = data;
+const { vehicles } = list;
+const { top } = topList;
 
 var router = express.Router();
 
@@ -9,11 +11,9 @@ router.get('/list', (req, res) => {
     res.send(vehicles);
 });
 
-// router.get('/images/:id', (req, res) => {
-//     const vehicle = vehicles.find(x => x._id === req.params.id);
-//     // let path = __dirname + vehicle.image;
-//     console.log(vehicle.image);
-//     res.sendFile(vehicle.image);
-// });
+router.get('/top', (req, res) => {
+    res.send(top);
+});
+
 
 export default router;
