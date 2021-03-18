@@ -14,7 +14,6 @@ function ListingScreen(props) {
 
     useEffect(() => {
         if (!vehicles.length) { 
-            console.log('request');
             getVehicles()(listDispatch);
         }
     }, []);

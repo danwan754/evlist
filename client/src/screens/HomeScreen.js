@@ -8,7 +8,9 @@ function HomeScreen(props) {
     const { vehicles } = topState;
 
     useEffect(() => {
-        getTopVehicles()(topDispatch);
+        if (!vehicles.length) {
+            getTopVehicles()(topDispatch);
+        }
     }, []);
 
     return (
