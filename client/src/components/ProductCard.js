@@ -11,7 +11,7 @@ function ProductCard(props) {
             <div className="card-detail">
                 <div className="card-make">{data.make}</div>
                 <div className="card-model">{data.model}</div>
-                <div className="card-range">{data.range}</div>
+                <div className="card-range">{data.range} km</div>
                 <div className="card-price-container">
                     <div className="card-price">$ {(data.price - data.rebate).toLocaleString('en-US')}</div>
                     {data.rebate > 0 ?
