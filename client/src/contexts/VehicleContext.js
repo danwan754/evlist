@@ -1,49 +1,64 @@
-import { createContext, useEffect, useReducer, useState } from 'react';
-import Axios from 'axios';
+import { createContext, useReducer } from 'react';
+import { SORT_HIGH, SORT_LOW, SORT_RANGE, VEHICLES_LOADING_FAIL, VEHICLES_LOADING_REQUEST, VEHICLES_LOADING_SUCCESS } from '../constants';
 
 export const VehicleContext = createContext();
 
-// const initialState = {
-//     vehicles = [],
-//     isLoading: false,
-//     error: null
-// };
-
-
-// const reducer = async (state, action) => {
-//   switch(action.type) {
-//     case(VEHICLES_DISPLAY):
-
-//       await getVehicles();
-//     default:
-//       throw new Error();
-//   }
-// }
-
-const getVehicles = () => {
-  return Axios.get('/api/list')
-  .then(res => res.data);
+const initialState = {
+    vehicles: [],
+    loading: false,
+    error: null,
+    sort: SORT_LOW
 };
 
-export const VehiclesContextProvider = props => {
-  // const [state, dispatch] = useReducer(reducer, initialState);
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const getData = async () => {
-    setLoading(true);
-    const newData = await getVehicles();
-    setData(newData);
-    setLoading(false);
+// fetch/sort vehicle list
+const vehiclesReducer = (state, action) => {
+  switch(action.type) {
+    case SORT_LOW:
+      return { 
+        ...state,
+        sort: SORT_LOW,
+        vehicles: state.vehicles.sort((a,b) => a.price - b.price)
+      };
+    case SORT_HIGH:
+      return {
+        ...state,
+        sort: SORT_HIGH,
+        vehicles: state.vehicles.sort((a,b) => b.price - a.price)
+      };
+    case SORT_RANGE:
+      return {
+        ...state,
+        sort: SORT_RANGE,
+        vehiciles: state.vehicles.sort((a,b) => b.range - a.range)
+      };
+    case VEHICLES_LOADING_REQUEST:
+      return {
+        ...state,
+        loading: true
+      }
+    case VEHICLES_LOADING_SUCCESS:
+      return {
+        ...state,
+        vehicles: action.payload,
+        loading: false
+      }
+    case VEHICLES_LOADING_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      }
+    default:
+      throw new Error();
   }
+}
 
-  useEffect(() => {
-    getData();
-  }, []);
+export const VehiclesContextProvider = props => {
+  const [state, dispatch] = useReducer(vehiclesReducer, initialState);
 
   return (
-    <VehicleContext.Provider value={{loading, data}}>
-        {props.children}
+    <VehicleContext.Provider value={ [state, dispatch] }>
+      {props.children}
     </VehicleContext.Provider>
   )
 }

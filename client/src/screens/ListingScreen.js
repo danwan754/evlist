@@ -1,31 +1,20 @@
-import React, { useContext } from 'react';
-import Axios from 'axios';
+import React, { useContext, useEffect } from 'react';
 
 import ProductCard from '../components/ProductCard';
 import SortBar from '../components/SortBar';
 import Footer from '../components/Footer';
-import { VehicleContext, VehiclesContextProvider } from '../contexts/VehicleContext';
+import { VehicleContext } from '../contexts/VehicleContext';
+import getVehicles from '../actions/getVehicles';
 
 
 function ListingScreen(props) {
 
-    const {loading, data} = useContext(VehicleContext);
-    const vehicles = data;
-    // console.log(vehicles);
+    const [state, dispatch] = useContext(VehicleContext);
+    const vehicles = state.vehicles;
 
-    // const getData = async () => { 
-    //     await Axios.get('/api/list')
-    //     .then(res => res.data)
-    //     .then(data => console.log(data));
-    // };
-    // const data = getData();
-
-    // const getData = async () => { 
-    //     await Axios.get('/api/images/1')
-    //     .then(data => console.log(data));
-    // };
-    // const data = getData();
-    // console.log(data);
+    useEffect(() => {
+        getVehicles()(dispatch);
+    }, []);
 
     return (
         <div className="listing-container">
@@ -37,9 +26,13 @@ function ListingScreen(props) {
                     <SortBar />
                 </div>
             </div>
-            <div className="product-card-collection">
-                {vehicles.map(vehicle => <ProductCard key={vehicle._id} data={vehicle} />)}
-            </div>
+            {state.loading ? 
+                'LOADING...'
+                :
+                <div className="product-card-collection">
+                    {vehicles.map(vehicle => <ProductCard key={vehicle._id} data={vehicle} />)}
+                </div>
+            }
             <Footer link="https://electricvehicles.bchydro.com/buying/EV-models-in-BC" />
         </div>
     )
