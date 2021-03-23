@@ -12,7 +12,7 @@ function RebateScreen(props) {
                     BC's Vehicle Rebate
                 </h2>
                 <p>
-                Residents, businesses, non-profit organizations and local government organizations leasing or buying a new electric vehicle in B.C. are eligible for a $3,000 off the after-tax vehicle price, thanks to the government of B.C.'s 
+                Residents, businesses, non-profit organizations and local government organizations leasing or buying a new electric vehicle in B.C. are eligible for a <b>$3,000</b> off the after-tax vehicle price, thanks to the government of B.C.'s 
                 &nbsp;<a href="https://www.cevforbc.ca/" target="_blank" rel="noreferrer">CEVforBC™</a> program. Through this program, EVs with a MSRP under $55,000 will qualify for the rebate.
                 </p>
             </section>
@@ -21,7 +21,7 @@ function RebateScreen(props) {
                     Federal Vehicle Rebate
                 </h2>
                 <p>
-                    The federal government is also offering a rebate of $5000 for EVs with a base model that has a MSRP of $45,000 or less. Trims of these models can have a MSRP of up to $55,000 and still qualify for the rebate.
+                    The federal government is also offering a rebate of <b>$5000</b> for EVs with a base model that has a MSRP of $45,000 or less. Trims of these models can have a MSRP of up to $55,000 and still qualify for the rebate.
                 </p>
                 <p>
                     Federal rebate program details can be found&nbsp;
@@ -37,8 +37,6 @@ function RebateScreen(props) {
                 </h2>
                 <p>
                     BC had a program that provided rebates for the purchase and installation of level 2 chargers for homes and businesses.
-                </p>
-                <p>
                     This program has expired as of February 28, 2021. It is currently under review for renewal.
                 </p>
                 <p>
