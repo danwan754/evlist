@@ -1,7 +1,5 @@
-import { SORT_HIGH, SORT_LOW, SORT_RANGE, VEHICLES_LOADING_FAIL, VEHICLES_LOADING_REQUEST, VEHICLES_LOADING_SUCCESS } from "../constants/constants";
+import { DISPLAY_BLOCK, DISPLAY_NONE, SORT_HIGH, SORT_LOW, SORT_RANGE, VEHICLES_LOADING_FAIL, VEHICLES_LOADING_REQUEST, VEHICLES_LOADING_SUCCESS } from "../constants/constants";
 
-
-// fetch/sort vehicle list
 export const listReducer = (state, action) => {
     switch(action.type) {
       case SORT_LOW:
@@ -38,6 +36,16 @@ export const listReducer = (state, action) => {
           ...state,
           loading: false,
           error: action.error
+        }
+      case DISPLAY_BLOCK:
+        return {
+          ...state,
+          compare: DISPLAY_BLOCK
+        }
+      case DISPLAY_NONE:
+        return {
+          ...state,
+          compare: DISPLAY_NONE
         }
       default:
         throw new Error();

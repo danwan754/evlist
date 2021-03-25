@@ -9,3 +9,6 @@ export const VEHICLES_LOADING_FAIL = 'VEHICLES_LOADING_FAIL';
 export const TOP_LOADING_REQUEST = 'TOP_LOADING_REQUEST';
 export const TOP_LOADING_SUCCESS = 'TOP_LOADING_SUCCESS';
 export const TOP_LOADING_FAIL = 'TOP_LOADING_FAIL';
+
+export const DISPLAY_NONE = 'display-none';
+export const DISPLAY_BLOCK = 'display-block';

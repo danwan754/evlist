@@ -3,6 +3,8 @@
 @import './css/listing.css';
 @import './css/components/productCard.css';
 @import './css/components/sortBar.css';
+@import './css/components/compareModal.css';
+@import './css/components/vehicleSelector.css';
 
 * {
   box-sizing: border-box;
