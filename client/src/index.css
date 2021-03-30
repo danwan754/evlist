@@ -51,8 +51,8 @@ header a {
 .header-links a:hover{
   color: #339933;
 }
-.header-links a:active{
-  color: #b3e6b3;
+.header-links a:focus{
+  color: #404040;
 }
 
 main {
