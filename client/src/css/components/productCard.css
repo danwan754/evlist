@@ -6,6 +6,13 @@
     padding: 2rem;
     text-align: left;
 }
+.flex-horizontal {
+  flex-direction: row;
+}
+.flex-vertical {
+  flex-direction: column;
+}
+
 .card-detail > div {
   font-size: 1.5rem;
   margin: .8rem;
