@@ -1,5 +1,5 @@
 import { createContext, useReducer } from 'react';
-import { DISPLAY_NONE, SORT_LOW } from '../constants/constants';
+import { DISPLAY_NONE, SORT_LOW, TOGGLE_LIST } from '../constants/constants';
 import { listReducer } from '../reducers/listReducer';
 import { topReducer } from '../reducers/topReducer';
 
@@ -11,7 +11,8 @@ const listInitialState = {
     loading: false,
     error: null,
     sort: SORT_LOW,
-    compare: DISPLAY_NONE
+    compare: DISPLAY_NONE,
+    toggle: TOGGLE_LIST
 };
 const topInitialState = {
   vehicles: [],

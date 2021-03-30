@@ -1,4 +1,4 @@
-import { DISPLAY_BLOCK, DISPLAY_NONE, SORT_HIGH, SORT_LOW, SORT_RANGE, VEHICLES_LOADING_FAIL, VEHICLES_LOADING_REQUEST, VEHICLES_LOADING_SUCCESS } from "../constants/constants";
+import { DISPLAY_BLOCK, DISPLAY_NONE, SORT_HIGH, SORT_LOW, SORT_RANGE, TOGGLE_GRID, TOGGLE_LIST, VEHICLES_LOADING_FAIL, VEHICLES_LOADING_REQUEST, VEHICLES_LOADING_SUCCESS } from "../constants/constants";
 
 export const listReducer = (state, action) => {
     switch(action.type) {
@@ -46,6 +46,16 @@ export const listReducer = (state, action) => {
         return {
           ...state,
           compare: DISPLAY_NONE
+        }
+      case TOGGLE_GRID:
+        return {
+          ...state,
+          toggle: TOGGLE_GRID
+        }
+      case TOGGLE_LIST:
+        return {
+          ...state,
+          toggle: TOGGLE_LIST
         }
       default:
         throw new Error();

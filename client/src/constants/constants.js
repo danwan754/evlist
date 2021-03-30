@@ -12,3 +12,6 @@ export const TOP_LOADING_FAIL = 'TOP_LOADING_FAIL';
 
 export const DISPLAY_NONE = 'display-none';
 export const DISPLAY_BLOCK = 'display-block';
+
+export const TOGGLE_GRID = 'TOGGLE_GRID';
+export const TOGGLE_LIST = 'TOGGLE_LIST';
