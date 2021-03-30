@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { VehicleContext } from '../contexts/VehicleContext';
-import DetailsCard from './DetailsCard';
+import ProductCard from './ProductCard';
 
 function VehicleSelector(props) {
 
@@ -20,14 +20,6 @@ function VehicleSelector(props) {
             return carName;
         }
     }
-    const getCarID = (carName) => {
-        const [make, model] = carName.split(' - ');
-        console.log(carName);
-        console.log(carName.split(' - '));
-        const vehicle = vehicles.find(car => car.make === make && car.model === model);
-        return vehicle._id;
-    }
-    console.log(getCarName(selected._id));
 
     return (
         <div className="vehicle-selector-container">
@@ -50,15 +42,9 @@ function VehicleSelector(props) {
             </select>
             {selected ? (
                 <div className="vehicle-selector-card">
-                    <div className="vehicle-selector-image-container">
-                        <img 
-                            src={selected.image} 
-                            alt='car' 
-                            _target='blank' 
-                            rel='noreferrer'
-                            className="vehicle-selector-img" />
-                    </div>
-                    <DetailsCard data={selected} />
+                    <ProductCard
+                        data={selected} 
+                        direction={'flex-vertical'} />
                 </div>    
                 )    
                 : ''
