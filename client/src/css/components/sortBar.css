@@ -13,3 +13,6 @@
     color: #194d33;
     border: none;
 }
+.sortBar-container > select:hover {
+    cursor: pointer;
+}
