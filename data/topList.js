@@ -33,7 +33,7 @@ export default {
                 image: '/images/2020 Volkswagen e-Golf.png',
                 name: 'Volkswagen e-Golf',
                 feature: '$29,895*',
-                description: 'For the chumps.',
+                description: 'For everyone else.',
                 website: 'https://www.vw.ca/en/models/new-vehicles/e-golf.html'
             }
         ]
