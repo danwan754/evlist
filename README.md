@@ -1,23 +1,40 @@
-# evlist
+## Stock tracker
 
-https://ev-list.herokuapp.com/
+Make watchlists of stocks to track. Create an account to save your watchlists.
+<br>
+<br>
+<br>
 
-List of top electric vehicles available in British Columbia, Canada. Includes information about how owning an electric vehicle may be beneficial for you. All information and vehicle images are from https://electricvehicles.bchydro.com/.
+### Dev Setup
 
-This website was made using React.js and Node.js. Context API was used for state management. The server has an API that returns a list of vehicle data for the vehicle listing page, and a list of top category car data for the homepage.
+In **.env.txt**:
+1. Rename **.env.txt** to **.env**
+2. Modify the values as needed, especially the database log in credentials
 
-### Data Fetching
-Data is fetched only once through the entire website visit. Upon first visiting the homepage, the data for the top category cars are fetched. Upon visiting the vehicle listings page, the listing data are fetched. When navigating to other pages and back to the homepage or listing page, no fetching would be done. Images are cached by the web browser.
+\
+On the commandline:
+1. Start up MySQL server:
+> sudo service mysql start
+
+2. Connect to MySQL in commandline:
+> mysql --user=*username/root* --password=*password*
+
+3. Copy the SQL commands found in **.db.sql** and paste into commandline.
+  These commands will:  
+    i. create database\
+    ii. create tables: Users, Stocks, Lists, List_items
+    
+The *Stocks* database table needs to be populated with data from:\
+*https://cloud.iexapis.com/stable/ref-data/symbols?token=API_KEY* \
+Only the company name and ticker will be stored in the table.
 
 
-### Listing page functionalities
-#### Views
-A single column list view or a grid-like view.
-
-#### Sort By
-- low price
-- high price
-- range
-
-#### Compare
-A modal that allows a selection of 2 vehicles to display side by side.
+#### Start Dev Mode
+Server:\
+In the root directory: */stock-watch*\
+run: *npm start*
+\
+\
+Client:\
+In another terminal in: */stock-watch/client*\
+run: *npm start*
